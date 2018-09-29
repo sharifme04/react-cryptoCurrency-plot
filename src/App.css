@@ -1,0 +1,31 @@
+.navbar {
+  border-radius: 0; }
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+  margin-top: 7px; }
+
+.navbar .navbar-collapse {
+  text-align: center; }
+
+.form-group {
+  margin-top: 10px; }
+
+.navbar-nav > li {
+  padding: 0px 30px; }
+
+.navbar-nav > li > a {
+  padding-top: 5px;
+  padding-bottom: 0px; }
+
+.form-group {
+  margin-bottom: 0px;
+  margin-top: 0px; }
+
+.tooltip {
+  opacity: 1; }
+
+svg:not(:root) {
+  overflow: visible; }
