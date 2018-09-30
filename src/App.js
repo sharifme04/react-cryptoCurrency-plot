@@ -34,9 +34,9 @@ class App extends Component {
          }
        )
    }
-selectLimit(event) {
-  this.setState({value: event.target.value});
-}
+  selectLimit(event) {
+    this.setState({value: event.target.value});
+  }
 
   render() {
     let result = [this.state.data];
