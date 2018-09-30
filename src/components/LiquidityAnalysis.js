@@ -81,6 +81,7 @@ class LiquidityAnalysis extends Component {
     });
     return (
       <div className="container-fluid">
+      <h4 className="title-text">Market Capitalization Vs Volume (24h)</h4>
       <div className="text-center">
         <ScatterplotChart
            data={chartData}

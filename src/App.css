@@ -1,6 +1,10 @@
 .navbar {
   border-radius: 0; }
 
+.title-text {
+  text-align: center;
+  margin-bottom: 10px; }
+
 .navbar .navbar-nav {
   display: inline-block;
   float: none;

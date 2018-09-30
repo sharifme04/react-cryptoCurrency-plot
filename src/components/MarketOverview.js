@@ -8,6 +8,7 @@ class MarketOverview extends Component {
         );
     return (
       <div className="container-fluid">
+      <h3 className="title-text">Market Overview</h3>
       <table className="table table-hover">
         <thead>
           <tr>
