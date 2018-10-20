@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { Style } from 'radium';
 
 const toolTipStyles = {
@@ -12,7 +12,7 @@ const toolTipStyles = {
   }
 };
 
-const ToolTip = (props) => (
+const ToolTip = (props:Object) => (
   <div className="tooltip-container">
     <Style scopeSelector=".tooltip-container" rules={toolTipStyles} />
     <div className="tooltip" style={{ top: props.top, left: props.left }}>
@@ -20,11 +20,5 @@ const ToolTip = (props) => (
     </div>
   </div>
 );
-
-ToolTip.propTypes = {
-  left: PropTypes.string,
-  top: PropTypes.string,
-  children: PropTypes.node
-};
 
 export default ToolTip;

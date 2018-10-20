@@ -1,6 +1,7 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-const TableRow = ({singleData}) =>(
+const TableRow = ({singleData}:Object) =>(
       <tr>
         <td>{singleData.rank}</td>
         <td>{singleData.name}</td>
@@ -10,5 +11,5 @@ const TableRow = ({singleData}) =>(
         <td>${singleData.quotes.USD.volume_24h}</td>
       </tr>
   )
-  
+
 export default TableRow;

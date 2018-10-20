@@ -1,7 +1,11 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import TableRow from './TableRow';
 
-class MarketOverview extends Component {
+type State ={/**/};
+type Props ={updateData:any};
+
+class MarketOverview extends React.Component<Props, State> {
   render() {
         let tableData = this.props.updateData.map(
           singleData => <TableRow singleData={singleData} key={singleData.id}/>

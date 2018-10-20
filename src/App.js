@@ -1,11 +1,20 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import MarketOverview from './components/MarketOverview';
 import LiquidityAnalysis from './components/LiquidityAnalysis';
 import './App.css';
 
-class App extends Component {
-  constructor(props) {
+type State ={
+  error: any,
+  isLoaded: boolean,
+  value : number,
+  data: any
+};
+type Props ={props:Object};
+
+class App extends React.Component<Props, State> {
+  constructor(props:any) {
     super(props);
     this.state = {
       error: null,
@@ -13,7 +22,7 @@ class App extends Component {
       value: 100,
       data: ""
     } ;
-    this.selectLimit = this.selectLimit.bind(this);
+    (this:any).selectLimit = this.selectLimit.bind(this);
   }
 
   componentDidMount() {
@@ -34,14 +43,14 @@ class App extends Component {
          }
        )
    }
-  selectLimit(event) {
+  selectLimit(event:Object) {
     this.setState({value: event.target.value});
   }
 
   render() {
     let result = [this.state.data];
     let updateData = Object.values(result[0])
-                      .sort((a, b)=>(a.rank - b.rank))
+                      .sort((a:any, b:any)=>(a.rank - b.rank))
                       .slice(0, this.state.value);
     return (
         <div>

@@ -1,20 +1,42 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import {ScatterplotChart} from 'react-easy-chart';
 import ToolTip from './ToolTip';
 
-class LiquidityAnalysis extends Component {
-  constructor(props) {
+type State ={
+  width:number,
+  height:number,
+  dataDisplay:any,
+  showToolTip:boolean,
+  top:string,
+  left:string,
+  name:string,
+  x:string,
+  y:string,
+  z:string
+
+};
+type Props ={updateData:any};
+
+class LiquidityAnalysis extends React.Component<Props, State> {
+  constructor(props:any) {
     super(props);
     this.state = {
       dataDisplay: '',
       showToolTip: false,
       width:900,
-      height:500
+      height:500,
+      top:'',
+      left:'',
+      name:'',
+      x:'',
+      y:'',
+      z:''
     } ;
-    this.mouseOverHandler = this.mouseOverHandler.bind(this);
-    this.mouseOutHandler  = this.mouseOutHandler.bind(this);
-    this.mouseMoveHandler = this.mouseMoveHandler.bind(this);
-    this.handleResize     = this.handleResize.bind(this);
+    (this:any).mouseOverHandler = this.mouseOverHandler.bind(this);
+    (this:any).mouseOutHandler  = this.mouseOutHandler.bind(this);
+    (this:any).mouseMoveHandler = this.mouseMoveHandler.bind(this);
+    (this:any).handleResize     = this.handleResize.bind(this);
   }
 
   componentDidMount() {
@@ -33,7 +55,7 @@ class LiquidityAnalysis extends Component {
     });
  }
 
-  mouseOverHandler(d, e) {
+  mouseOverHandler(d:Object, e:Object) {
       this.setState({
         dataDisplay: '',
         showToolTip: true,
@@ -45,7 +67,7 @@ class LiquidityAnalysis extends Component {
         name:d.name});
     }
 
-  mouseMoveHandler(e) {
+  mouseMoveHandler(e:Object) {
     if (this.state.showToolTip) {
       this.setState({ top: `100px`, left: `300px` });
     }
